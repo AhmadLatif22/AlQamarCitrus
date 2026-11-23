@@ -15,7 +15,7 @@ export default async function Home(){
  <div className="wrap"><div><span className="lbl a" style={d(.1)}>Sargodha, Punjab — Pakistan</span>
  <h1>{H.map(([w,e],i)=><span key={i}>{e?<em><span className="w" style={d(.25+i*.1)}>{w}</span></em>:<span className="w" style={d(.25+i*.1)}>{w}</span>}{' '}</span>)}</h1>
  <p className="a" style={d(.95)}>Sweet, juicy kinnow and oranges grown in Pakistan's citrus capital and delivered to your door. Pay only when it arrives.</p>
- <div className="a" style={d(1.1)}><Link className="btn" href="/shop">Shop now →</Link></div>
+ <div className="a btnrow" style={d(1.1)}><Link className="btn" href="/shop">Shop now →</Link></div>
  <div className="stats a" style={d(1.3)}><div><b>100%</b><span className="muted">Farm fresh</span></div><div><b>COD</b><span className="muted">Pay on delivery</span></div><div><b>PK</b><span className="muted">Nationwide delivery</span></div></div></div>
  <div className="a" style={d(.5)}><div className="orb"><img src={HERO_IMAGE} alt="Fresh Sargodha oranges" width="800" height="800"/></div></div></div></div>
  <div className="strip"><div>{T.repeat(8)}</div></div>

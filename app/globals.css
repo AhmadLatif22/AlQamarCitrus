@@ -65,7 +65,7 @@ body{overflow-x:clip}h1,h2,h3,p{overflow-wrap:anywhere}
 @media(max-width:1024px){.wrap{padding:0 22px}.hero{padding:70px 0 50px}.hero .wrap{gap:36px}.cta{padding:44px}.fg{gap:30px}}
 @media(max-width:860px){
  .nav{height:66px}.links{top:66px;padding:10px 16px 16px}.links a{padding:14px 12px;font-size:1rem;border-bottom:1px solid var(--line);border-radius:0}
- .orb{max-width:300px}.hero .wrap>div:last-child{order:-1}.hero{padding:40px 0 50px}.stats{gap:28px;margin-top:34px}
+ .orb{max-width:300px}.hero{padding:40px 0 50px}.stats{gap:28px;margin-top:34px}
  .fg{grid-template-columns:1fr 1fr}.sh{margin-bottom:30px}.pg{padding:50px 0 0}.box{padding:22px}
 }
 @media(max-width:600px){
@@ -100,3 +100,10 @@ body{overflow-x:clip}h1,h2,h3,p{overflow-wrap:anywhere}
 .tr{display:flex;justify-content:space-between;padding:8px 0;color:#ffffffc0}.tr.big{font-size:1.25rem;font-weight:800;color:#fff;border-top:1px solid var(--line);margin-top:8px;padding-top:14px}.tr.big span:last-child{color:var(--o)}
 .sum{align-self:start;position:sticky;top:92px}
 @media(max-width:860px){.sum{order:-1;position:static}}
+/* Mobile hero order: text, button, picture, stats */
+@media(max-width:860px){
+ .hero .wrap{display:flex;flex-direction:column;align-items:stretch;gap:0}
+ .hero .wrap>div:first-child{display:contents}
+ .hero .lbl{order:1}.hero h1{order:2}.hero p{order:3}.hero .btnrow{order:4}
+ .hero .wrap>div:last-child{order:5;margin-top:36px}.hero .stats{order:6}
+}
