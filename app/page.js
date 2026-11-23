@@ -4,7 +4,7 @@ import ProductCard from '../components/ProductCard';
 import Reveal from '../components/Reveal';
 export const revalidate=60;
 // HERO IMAGE: put your transparent-background orange photo at public/images/orange.png (or change this path)
-const HERO_IMAGE='/images/orangee.png';
+const HERO_IMAGE='/images/orange.png';
 const T='Sargodha Kinnow • Fresh Oranges • Cash on Delivery • Farm to Door • ';
 const H=[['Fresh'],['citrus,'],['straight',1],['from'],['the'],['orchard.']];
 const d=s=>({animationDelay:s+'s'});
@@ -21,7 +21,7 @@ export default async function Home(){
  <div className="strip"><div>{T.repeat(8)}</div></div>
  <section><div className="wrap"><Reveal><div className="sh"><div><span className="lbl">Fresh picks</span><h2>Our oranges</h2></div><Link className="btn o" href="/shop">View all</Link></div></Reveal>
  <div className="grid">{(data||[]).map((p,i)=><Reveal key={p.id} delay={(i%4)*100}><ProductCard p={p}/></Reveal>)}</div>{!data?.length&&<p className="muted">Products coming soon.</p>}</div></section>
- <section style={{paddingTop:0}}><div className="wrap"><Reveal><span className="lbl">Why Al Qamer</span><h2 style={{margin:'10px 0 36px'}}>Grown with care</h2></Reveal>
+ <section style={{paddingTop:0}}><div className="wrap"><Reveal><span className="lbl">Why Al Qamar</span><h2 style={{margin:'10px 0 36px'}}>Grown with care</h2></Reveal>
  <div className="why">{[['01','Sargodha grown','Our fruit comes from the orchards around Sargodha, known across Pakistan for its citrus.'],['02','Pay on delivery','No advance payment and no online card needed. You pay when the oranges reach you.'],['03','Packed fresh','Every order is sorted and packed carefully so it reaches you sweet and juicy.']].map(([n,t,x],i)=><Reveal key={n} delay={i*150}><div><span>{n}</span><h3>{t}</h3><p className="muted">{x}</p></div></Reveal>)}</div></div></section>
  <section style={{paddingTop:0}}><div className="wrap"><Reveal><div className="cta"><h2>Taste the difference of real Sargodha citrus.</h2><Link className="btn" href="/shop">Order now →</Link></div></Reveal></div></section></>;
 }

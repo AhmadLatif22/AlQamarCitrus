@@ -85,3 +85,6 @@ body{overflow-x:clip}h1,h2,h3,p{overflow-wrap:anywhere}
 .orb{background:none;box-shadow:none;animation:float 6s ease-in-out infinite;font-size:0}
 .orb:after{content:"";position:absolute;inset:6%;border-radius:50%;background:radial-gradient(circle,#ff6a0066,transparent 70%);filter:blur(34px)}
 .orb img{position:relative;z-index:1;width:92%;height:92%;object-fit:contain;filter:drop-shadow(0 30px 40px #0008)}
+/* Logo image */
+.logoimg{height:46px;width:auto;display:block}.logoimg.big{height:56px;margin-bottom:14px}.box p+button{margin-top:12px}
+@media(max-width:600px){.logoimg{height:38px}.logoimg.big{height:46px}}

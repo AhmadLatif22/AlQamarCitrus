@@ -8,7 +8,7 @@ export default function Admin(){
  const load=async()=>{setOrders((await supabase.from('orders').select('*').order('created_at',{ascending:false})).data||[]);setProds((await supabase.from('products').select('*').order('created_at',{ascending:false})).data||[])};
  useEffect(()=>{supabase.auth.getSession().then(({data})=>setU(data.session?.user||null))},[]);
  useEffect(()=>{if(u)load()},[u]);
- async function login(e){e.preventDefault();const {data,error}=await supabase.auth.signInWithPassword({email:em,password:pw});error?setErr(error.message):setU(data.user)}
+ async function login(e){e.preventDefault();setErr('');const bad='Cannot reach Supabase. Check NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in .env.local, then restart npm run dev.';try{const {data,error}=await supabase.auth.signInWithPassword({email:em,password:pw});if(error)setErr(/fetch|load failed|network/i.test(error.message)?bad:error.message);else setU(data.user)}catch{setErr(bad)}}
  async function saveOrder(o){const {error}=await supabase.from('orders').update({status:o.status,courier:o.courier,tracking_no:o.tracking_no,tracking_note:o.tracking_note,updated_at:new Date()}).eq('id',o.id);alert(error?error.message:'Saved')}
  const edit=(id,k,v)=>setOrders(orders.map(o=>o.id===id?{...o,[k]:v}:o));
  async function addProd(e){e.preventDefault();let image_url=null;
